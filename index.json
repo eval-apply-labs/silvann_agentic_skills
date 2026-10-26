@@ -1,0 +1,94 @@
+{
+ "name": "silvann agentic skills repository",
+ "description": "tools for SiLVANN's REPL, a package a folder, each tool one Python file its (add_tool …) installs",
+ "packages": {
+  "data": {
+   "description": "Tables and records: CSV and JSON files read.",
+   "about": "Tools that read a CSV or JSON file in the working folder: a table's columns, a record's value. They read; they never\nwrite.",
+   "tools": {
+    "csv_columns": {
+     "file": "packages/data/csv_columns.py",
+     "sha256": "1f233dbd6836e080d6d5c85dcbef9d4316920ef0c7912f36e8eda63df2fe2de5",
+     "doc": "A CSV file's columns: their names, or one column's values.",
+     "verbs": [
+      {
+       "name": "csv-names",
+       "usage": "(csv-names path)",
+       "about": "The names of the CSV file's columns, in order."
+      },
+      {
+       "name": "csv-column",
+       "usage": "(csv-column path name)",
+       "about": "The values of one column of the CSV file, top to bottom."
+      }
+     ],
+     "settings": []
+    },
+    "json_value": {
+     "file": "packages/data/json_value.py",
+     "sha256": "1dc04db921e933448d8d2729a9a94b8a77332ce3a46bcc59cdd1e86499b555ba",
+     "doc": "A value in a JSON file, at a path of keys and indexes.",
+     "verbs": [
+      {
+       "name": "json-value",
+       "usage": "(json-value path keys)",
+       "about": "The value in the JSON file at path found by keys, dot-joined (\"\" the whole file)."
+      }
+     ],
+     "settings": []
+    }
+   }
+  },
+  "text": {
+   "description": "Text in files: words counted, lines found.",
+   "about": "Tools that read a text file in the working folder and answer what is in it, for the REPL's model to use on documents,\nnotes and logs. They read; they never write.",
+   "tools": {
+    "count_words": {
+     "file": "packages/text/count_words.py",
+     "sha256": "ab0f9195fc7ff94e7b237bb1f3168496f592249de6ff78dd86c0ef4b82d5a64c",
+     "doc": "Words, lines and characters counted in a text file.",
+     "verbs": [
+      {
+       "name": "count-words",
+       "usage": "(count-words path)",
+       "about": "The words, lines and characters of the text file at path."
+      }
+     ],
+     "settings": []
+    },
+    "find_lines": {
+     "file": "packages/text/find_lines.py",
+     "sha256": "b0c6d925392e07c35cc24f57b8f019e1338cd82f1eb6df6b0779d1b726db8357",
+     "doc": "The lines of a text file that hold a word, with their numbers.",
+     "verbs": [
+      {
+       "name": "find-lines",
+       "usage": "(find-lines path word)",
+       "about": "The lines of the file at path that hold word, case ignored, each as \"number: line\"."
+      }
+     ],
+     "settings": []
+    }
+   }
+  },
+  "units": {
+   "description": "Quantities converted between units: length, mass, temperature, time.",
+   "about": "A number and its unit's name in, the number in another unit out — metric and imperial lengths and masses, Celsius,\nFahrenheit and Kelvin, seconds to days.",
+   "tools": {
+    "convert": {
+     "file": "packages/units/convert.py",
+     "sha256": "5bfeb16f9d9988260adb4be663f19eb574b12afab531d418bd3367e95f30e5e8",
+     "doc": "Quantities converted between units: length, mass, temperature and time.",
+     "verbs": [
+      {
+       "name": "convert-units",
+       "usage": "(convert-units value from_unit to_unit)",
+       "about": "value in from_unit, as to_unit: 12 \"ft\" \"m\" is 3.6576."
+      }
+     ],
+     "settings": []
+    }
+   }
+  }
+ }
+}
